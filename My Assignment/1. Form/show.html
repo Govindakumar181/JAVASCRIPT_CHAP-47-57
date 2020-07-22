@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Show</title>
+</head>
+<body>
+
+    <div style="font-size: 40px; color:black; margin: 0 auto; text-align: center;">
+        <h2>Click <b>SHOW</b> button to see your Sign Up Data</h2>
+        <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Show Data</button>
+        <button onclick="location.href='index.html'" style="width:auto;">Back to Sign Up</button>
+    </div>
+    
+    <div id="id01" class="modal">
+        <div class="container">
+            <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+            <div style=" font-size: 40px;  color: rgb(32, 7, 63); text-align: center;">
+                Your Email is: <span id="data"> Email</span><br> 
+                Your Password is: <span id="data1"> Password</span><br>
+                Your Telephone is: <span id="data2"> Telephone</span><br>
+            </div>
+        </div>
+    </div>
+    
+
+    <script>
+        document.getElementById("data").innerHTML=localStorage.getItem("txtValue");
+        document.getElementById("data1").innerHTML=localStorage.getItem("txtValue1");
+        document.getElementById("data2").innerHTML=localStorage.getItem("txtValue2");
+    </script>
+</body>
+</html>
